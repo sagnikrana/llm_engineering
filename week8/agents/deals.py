@@ -8,9 +8,10 @@ import requests
 import time
 
 feeds = [
-    "https://www.dealnews.com/c142/Electronics/?rss=1",
-    "https://www.dealnews.com/c39/Computers/?rss=1",
-    "https://www.dealnews.com/f1912/Smart-Home/?rss=1",
+    # "https://www.dealnews.com/c142/Electronics/?rss=1",
+    # "https://www.dealnews.com/c39/Computers/?rss=1",
+    # "https://www.dealnews.com/f1912/Smart-Home/?rss=1",
+    "https://www.cvs.com/shop/merch/extra-big-deals?widgetID=nlvr052j&mc=0&icid=shop-gnav-menu-ebd"
 ]
 
 # You could also add: "https://www.dealnews.com/c238/Automotive/?rss=1"
@@ -90,7 +91,7 @@ class ScrapedDeal:
         Retrieve all deals from the selected RSS feeds
         """
         deals = []
-        feed_iter = tqdm(feeds) if show_progress else feeds
+        feed_iter = tqdm[str](feeds) if show_progress else feeds
         for feed_url in feed_iter:
             feed = feedparser.parse(feed_url)
             for entry in feed.entries[:10]:
